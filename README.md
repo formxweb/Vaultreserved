@@ -10,6 +10,7 @@ assets/css/main.css   Tasarım sistemi + tüm bölümler
 assets/js/main.js     Rezervasyon penceresi, menü, animasyonlar (~7 KB)
 assets/fonts/         Cormorant Garamond + Manrope (kendi sunucumuzda, Türkçe karakterli)
 assets/img/           AVIF + WebP, 3 boyut (mobil / tablet / masaüstü)
+assets/video/         Açılış videosu (MP4 + WebM, sessiz, 12 sn döngü) + kapak karesi
 tools/                Fotoğraf optimizasyon aracı (yalnızca geliştirme için)
 vercel.json           Önbellek + güvenlik başlıkları
 ```
@@ -38,15 +39,18 @@ Bunlara açık kaynakta ulaşılamadı; uydurulmadı. Site, güncel menü için 
 
 ## ⚠️ Yayına almadan önce
 
-1. **Fotoğraflar geçicidir.** Şu an [Unsplash](https://unsplash.com/license) lisanslı (ticari kullanıma açık) görseller var.
+1. **Açılış videosu Vault'un kendi içeriğidir** (Instagram reel'i). Üstteki "VAULT" ve alttaki "V" logosu kırpılarak çıkarıldı;
+   ses kaldırıldı. Daha yüksek çözünürlüklü orijinal gelirse aynı adlarla değiştirin.
+   Ziyaretçi "hareketi azalt" ayarını açtıysa ya da veri tasarrufu modundaysa video oynamaz, kapak karesi görünür.
+2. **Diğer fotoğraflar geçicidir.** Şu an [Unsplash](https://unsplash.com/license) lisanslı (ticari kullanıma açık) görseller var.
    Footer'da "Görseller temsilidir" yazıyor. Vault'tan gerçek fotoğrafları alıp aynı dosya adlarıyla değiştirin:
    ```bash
    python3 tools/optimize_images.py ~/vault-fotograflar 0.5
    ```
    Ardından footer'daki "Görseller temsilidir." satırını silin.
-2. **Puro bölümü** brief'e göre yazıldı; Vault'ta gerçekten puro alanı olduğunu ve nerede olduğunu (açık/kapalı alan) mekânla teyit edin.
-3. **Alan adı** belli olunca `index.html` içine `<link rel="canonical">`, mutlak `og:image` URL'si ve `sitemap.xml` ekleyin.
-4. İsterseniz Check&Place'te site için ayrı bir kampanya kodu açtırıp linkteki `campaignCode=online` değerini değiştirin; böylece siteden gelen rezervasyonlar ayrı ölçülür.
+3. **Puro bölümü** brief'e göre yazıldı; Vault'ta gerçekten puro alanı olduğunu ve nerede olduğunu (açık/kapalı alan) mekânla teyit edin.
+4. **Alan adı** belli olunca `index.html` içine `<link rel="canonical">`, mutlak `og:image` URL'si ve `sitemap.xml` ekleyin.
+5. İsterseniz Check&Place'te site için ayrı bir kampanya kodu açtırıp linkteki `campaignCode=online` değerini değiştirin; böylece siteden gelen rezervasyonlar ayrı ölçülür.
 
 ## Yerelde çalıştırma
 
@@ -60,6 +64,6 @@ Statik site: Vercel'de "Framework: Other", build komutu boş, output dizini kök
 
 ## Görsel kaynakları (geçici)
 
-Unsplash Lisansı kapsamında: Shawn Deng (hero), Stefanie Jockschat, zero take, chaewon you, Egor Myznik,
+Unsplash Lisansı kapsamında: Stefanie Jockschat, zero take, chaewon you, Egor Myznik,
 Thom Milkovic, phoebe lynch, Fabian García Acevedo, Mahmoud Fawzy, Ömer Taha Çetin, Caramel, Ash Edmonds,
 William Krause, Marcos Ferreira, Alek Olson, takahiro taguchi, William Bereza, Miguel Joya.

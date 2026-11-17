@@ -170,6 +170,39 @@
     chapters.forEach((c) => chapterObserver.observe($('.chapter__head', c)));
   }
 
+  /* ---------- Hero film ---------- */
+  const film = $('.hero__video');
+  const filmBtn = $('[data-video-toggle]');
+  if (film && filmBtn) {
+    const conn = navigator.connection || {};
+    const saveData = conn.saveData === true;
+    let userPaused = reduceMotion || saveData; // respect the visitor's settings: poster only
+    const show = (playing) => {
+      filmBtn.classList.toggle('is-paused', !playing);
+      filmBtn.setAttribute('aria-label', playing ? 'Videoyu duraklat' : 'Videoyu oynat');
+    };
+    const start = () => {
+      film.muted = true;
+      const p = film.play();
+      if (p && typeof p.catch === 'function') p.catch(() => show(false)); // e.g. iOS Low Power Mode
+    };
+    film.addEventListener('play', () => show(true));
+    film.addEventListener('pause', () => show(false));
+    filmBtn.hidden = false;
+    show(false);
+    filmBtn.addEventListener('click', () => {
+      if (film.paused) { userPaused = false; start(); } else { userPaused = true; film.pause(); }
+    });
+    if (!userPaused) start();
+    if ('IntersectionObserver' in window) {
+      // Pause off-screen to save battery and data; resume only if the visitor did not pause it.
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) { if (!userPaused && film.paused) start(); }
+        else if (!film.paused) film.pause();
+      }, { threshold: 0.05 }).observe($('.hero'));
+    }
+  }
+
   /* ---------- Sticky mobile reservation dock ---------- */
   const dock = $('#dock');
   const heroCta = $('#hero-cta');

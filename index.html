@@ -23,8 +23,7 @@
   <link rel="preconnect" href="https://checkandplace.com">
   <link rel="preload" href="assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/avif" href="assets/img/hero-portrait-900.avif" media="(max-width: 767px) and (orientation: portrait)" fetchpriority="high">
-  <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/hero-960.avif 960w, assets/img/hero-1600.avif 1600w, assets/img/hero-2400.avif 2400w" imagesizes="100vw" media="(min-width: 768px), (orientation: landscape)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="assets/video/hero-poster.webp" fetchpriority="high">
 
   <link rel="stylesheet" href="assets/css/main.css">
   <script>document.documentElement.classList.add('js')</script>
@@ -125,19 +124,22 @@
     <!-- ================= HERO ================= -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero__media">
-        <picture>
-          <source media="(max-width: 767px) and (orientation: portrait)" type="image/avif" srcset="assets/img/hero-portrait-600.avif 600w, assets/img/hero-portrait-900.avif 900w" sizes="100vw">
-          <source media="(max-width: 767px) and (orientation: portrait)" type="image/webp" srcset="assets/img/hero-portrait-600.webp 600w, assets/img/hero-portrait-900.webp 900w" sizes="100vw">
-          <source type="image/avif" srcset="assets/img/hero-960.avif 960w, assets/img/hero-1600.avif 1600w, assets/img/hero-2400.avif 2400w" sizes="100vw">
-          <source type="image/webp" srcset="assets/img/hero-960.webp 960w, assets/img/hero-1600.webp 1600w, assets/img/hero-2400.webp 2400w" sizes="100vw">
-          <img src="assets/img/hero-1600.webp" width="2600" height="1733" alt="Loş ışıklı bar; arkada aydınlatılmış viski rafları, önde ahşap bar tabureleri" fetchpriority="high" decoding="async">
-        </picture>
+        <video class="hero__video" muted loop playsinline preload="none" poster="assets/video/hero-poster.webp" aria-hidden="true" tabindex="-1" disablepictureinpicture disableremoteplayback>
+          <source src="assets/video/hero.mp4" type="video/mp4">
+          <source src="assets/video/hero.webm" type="video/webm">
+        </video>
       </div>
 
       <div class="wrap hero__inner">
-        <div class="hero__brand" aria-hidden="true">
-          <div class="hero__mast"><span style="--i:0">V</span><span style="--i:1">A</span><span style="--i:2">U</span><span style="--i:3">L</span><span style="--i:4">T</span></div>
-          <div class="hero__reserved hero__fade" style="--d:900ms">RESERVED</div>
+        <div class="hero__brand">
+          <div class="hero__mast" aria-hidden="true"><span style="--i:0">V</span><span style="--i:1">A</span><span style="--i:2">U</span><span style="--i:3">L</span><span style="--i:4">T</span></div>
+          <div class="hero__reserved hero__fade" style="--d:900ms">
+            <span aria-hidden="true">RESERVED</span>
+            <button class="hero__toggle" type="button" aria-label="Videoyu duraklat" data-video-toggle hidden>
+              <svg class="hero__toggle-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2v8M8.5 2v8" stroke="currentColor" stroke-width="1.4"/></svg>
+              <svg class="hero__toggle-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2l6 4-6 4z" fill="currentColor"/></svg>
+            </button>
+          </div>
         </div>
 
         <div class="hero__content">
