@@ -4,14 +4,15 @@ Mavişehir, Livin İzmir'deki **Vault** için tek sayfalık, rezervasyon odaklı
 Saf HTML/CSS/JS — framework yok, build adımı yok, çalışma zamanı bağımlılığı yok.
 
 ```
-index.html            Tüm sayfa (TR içerik, EN editoryal başlıklar)
+src/index.html        KAYNAK sayfa — düzenlemeler burada yapılır
+index.html            Yayınlanan sayfa — tools/build.py üretir (elle düzenlemeyin)
 404.html              Markalı 404 sayfası
 assets/css/main.css   Tasarım sistemi + tüm bölümler
 assets/js/main.js     Rezervasyon penceresi, menü, animasyonlar (~7 KB)
 assets/fonts/         Cormorant Garamond + Manrope (kendi sunucumuzda, Türkçe karakterli)
-assets/img/           AVIF + WebP, 3 boyut (mobil / tablet / masaüstü)
+assets/img/           AVIF + WebP, 5 boyut (480–1600 px)
 assets/video/         Açılış videosu (MP4 + WebM, sessiz, 12 sn döngü) + kapak karesi
-tools/                Fotoğraf optimizasyon aracı (yalnızca geliştirme için)
+tools/                build.py (sayfa derleyici) + optimize_images.py (fotoğraf hattı)
 vercel.json           Önbellek + güvenlik başlıkları
 ```
 
@@ -51,6 +52,19 @@ Bunlara açık kaynakta ulaşılamadı; uydurulmadı. Site, güncel menü için 
 3. **Puro bölümü** brief'e göre yazıldı; Vault'ta gerçekten puro alanı olduğunu ve nerede olduğunu (açık/kapalı alan) mekânla teyit edin.
 4. **Alan adı** belli olunca `index.html` içine `<link rel="canonical">`, mutlak `og:image` URL'si ve `sitemap.xml` ekleyin.
 5. İsterseniz Check&Place'te site için ayrı bir kampanya kodu açtırıp linkteki `campaignCode=online` değerini değiştirin; böylece siteden gelen rezervasyonlar ayrı ölçülür.
+
+## Değişiklik yapma
+
+1. Metin/yapı → `src/index.html`, stil → `assets/css/main.css`, davranış → `assets/js/main.js`.
+2. `python3 tools/build.py` → `index.html` yeniden üretilir: görseller `<picture>` olarak yerleşir,
+   CSS küçültülüp sayfaya gömülür (ayrı CSS isteği ilk çizimi geciktirmesin diye). Pillow gerekir.
+3. Commit + push → Vercel otomatik yayınlar.
+
+## Ölçüm (Lighthouse 13, 17 Kasım 2026)
+
+Mobil ve masaüstü: Performans 100 · Erişilebilirlik 100 · En İyi Uygulamalar 100 · SEO 100 hedeflenir;
+son ölçüm sonuçları commit mesajlarında. Paylaşım linkiyle ölçülen "yönlendirme" uyarısı linkin
+çerez yönlendirmesinden gelir, gerçek alan adında oluşmaz.
 
 ## Yerelde çalıştırma
 

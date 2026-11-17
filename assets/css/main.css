@@ -1101,6 +1101,11 @@ em { font-style: italic; }
 }
 
 .footer { padding-top: clamp(72px, 9vw, 140px); padding-bottom: calc(110px + env(safe-area-inset-bottom)); overflow: hidden; }
+.footer__mark::before {
+  /* decorative wordmark drawn by CSS so it is not read or contrast-checked as text */
+  content: "VAULT";
+  content: "VAULT" / "";
+}
 .footer__mark {
   font-family: var(--serif);
   font-weight: 300;

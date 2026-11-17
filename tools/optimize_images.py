@@ -4,7 +4,7 @@ Kullanım:
     python3 tools/optimize_images.py <kaynak_klasör> [hero_odak_x]
 
 Kaynak klasördeki her <isim>.jpg dosyası, assets/img/ içine AVIF + WebP
-olarak 3 boyutta yazılır. Sitedeki isimlerle aynı dosya adlarını kullanın
+olarak 5 boyutta (480–1600 px) yazılır. Sitedeki isimlerle aynı dosya adlarını kullanın
 (hero.jpg, whisky-sphere.jpg, cigar-room.jpg ...), HTML'e dokunmanıza gerek kalmaz.
 hero_odak_x: mobil dikey kırpımın yatay odağı (0–1, varsayılan 0.5).
 Gerekli: Pillow (pip install pillow) — yalnızca bu araç için, site için değil.
@@ -16,8 +16,8 @@ from PIL import Image, ImageEnhance
 SRC = sys.argv[1]
 FOCUS_X = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 DST = os.path.join(os.path.dirname(__file__), '..', 'assets', 'img')
-WIDTHS = {'hero': [960, 1600, 2400]}
-DEFAULT = [480, 960, 1600]
+WIDTHS = {}
+DEFAULT = [480, 720, 960, 1200, 1600]
 # İsteğe bağlı renk ayarı: (doygunluk, parlaklık, kontrast). Gerçek fotoğraflarda gerekirse düzenleyin.
 GRADE = {}
 
@@ -50,4 +50,4 @@ for f in sorted(os.listdir(SRC)):
         x0 = max(0, min(im.width - W, cx - W // 2))
         save(im.crop((x0, 0, x0 + W, H)), 'hero-portrait', [600, 900])
 
-print('Not: Boyutlar değiştiyse index.html içindeki width/height ve srcset değerlerini kontrol edin.')
+print('Şimdi sayfayı yeniden üretin: python3 tools/build.py')
