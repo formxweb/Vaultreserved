@@ -1365,8 +1365,9 @@ html.is-locked { overflow: hidden; }
 @keyframes rise { from { transform: translate3d(0, 105%, 0); } to { transform: none; } }
 .js .hero__fade { animation: fade 1200ms var(--ease-out) both; animation-delay: var(--d, 400ms); }
 @keyframes fade { from { opacity: 0; transform: translate3d(0, 14px, 0); } to { opacity: 1; transform: none; } }
-.js .hero__mast svg { animation: mast 1600ms var(--ease-out) both; animation-delay: 300ms; }
-@keyframes mast { from { opacity: 0; transform: translate3d(0, 18%, 0); } to { opacity: 1; transform: none; } }
+/* The wordmark is the LCP element: it must paint on the first frame, so it rises without fading in. */
+.js .hero__mast svg { animation: mast 1400ms var(--ease-out) both; }
+@keyframes mast { from { transform: translate3d(0, 10%, 0); } to { transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
