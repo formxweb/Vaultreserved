@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Vault Reserved — Viski, Puro & Mutfak | Mavişehir, İzmir</title>
   <meta name="description" content="Vault Reserved: Livin İzmir'de, Mavişehir'de viski, puro, sushi ve kokteyl etrafında kurulan bir akşam. Masanızı online ayırtın.">
-  <meta name="theme-color" content="#171614">
+  <meta name="theme-color" content="#0c1424">
   <meta name="format-detection" content="telephone=no">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -24,6 +24,8 @@
   <link rel="preconnect" href="https://checkandplace.com">
   <link rel="preload" href="assets/fonts/cormorant-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/gravitas-vault.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cinzel-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" href="assets/video/hero-poster.webp" fetchpriority="high">
 
   <!--build:css assets/css/main.css-->
@@ -58,6 +60,20 @@
     <symbol id="i-out" viewBox="0 0 12 12"><path d="M2.5 9.5l7-7M4 2.5h5.5V8" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3.5h3.6l1.8 4.6-2.4 1.6a11.5 11.5 0 0 0 5.8 5.8l1.6-2.4 4.6 1.8v3.6a1.9 1.9 0 0 1-2 1.9A16.6 16.6 0 0 1 3.6 5.5a1.9 1.9 0 0 1 1.9-2z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+    <defs><clipPath id="wm-clip"><text x="0" y="0" font-family="'Gravitas One', Georgia, serif" font-size="200">VAULT</text></clipPath></defs>
+    <!-- Wordmark set to echo Vault's engraved logo; swap for the official SVG when Vault supplies it. -->
+    <symbol id="wm" viewBox="-3 -142 879 149">
+      <g fill="currentColor"><text x="0" y="0" font-family="'Gravitas One', Georgia, serif" font-size="200">VAULT</text></g>
+      <g clip-path="url(#wm-clip)" fill="none">
+        <g style="stroke: var(--ink, #0c1424)" stroke-width="13"><text x="0" y="0" font-family="'Gravitas One', Georgia, serif" font-size="200">VAULT</text></g>
+        <g stroke="currentColor" stroke-width="8"><text x="0" y="0" font-family="'Gravitas One', Georgia, serif" font-size="200">VAULT</text></g>
+      </g>
+    </symbol>
+    <symbol id="vmono" viewBox="0 0 100 100">
+      <path d="M50 2 98 50 50 98 2 50Z" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M50 11 89 50 50 89 11 50Z" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <text x="50" y="64" text-anchor="middle" font-family="'Gravitas One', Georgia, serif" font-size="40" fill="currentColor">V</text>
+    </symbol>
   </svg>
 
   <a class="skip-link" href="#icerik">İçeriğe geç</a>
@@ -66,7 +82,7 @@
   <header class="nav" id="nav">
     <div class="wrap nav__inner">
       <a class="wordmark" href="#top" aria-label="Vault Reserved — sayfa başı">
-        <span class="wordmark__main" aria-hidden="true">VAULT</span>
+        <svg class="wordmark__main" viewBox="0 0 879 149" aria-hidden="true" focusable="false"><use href="#wm" width="879" height="149"/></svg>
         <span class="wordmark__sub" aria-hidden="true">RESERVED</span>
       </a>
       <nav aria-label="Ana menü">
@@ -94,7 +110,7 @@
   <dialog class="menu" id="menu" aria-label="Menü">
     <div class="menu__top">
       <a class="wordmark" href="#top" data-menu-link aria-label="Vault Reserved — sayfa başı">
-        <span class="wordmark__main" aria-hidden="true">VAULT</span>
+        <svg class="wordmark__main" viewBox="0 0 879 149" aria-hidden="true" focusable="false"><use href="#wm" width="879" height="149"/></svg>
         <span class="wordmark__sub" aria-hidden="true">RESERVED</span>
       </a>
       <button class="menu__close" type="button" data-menu-close>
@@ -133,7 +149,7 @@
 
       <div class="wrap hero__inner">
         <div class="hero__brand">
-          <div class="hero__mast" aria-hidden="true"><span style="--i:0">V</span><span style="--i:1">A</span><span style="--i:2">U</span><span style="--i:3">L</span><span style="--i:4">T</span></div>
+          <div class="hero__mast" aria-hidden="true"><svg viewBox="0 0 879 149" focusable="false"><use href="#wm" width="879" height="149"/></svg></div>
           <div class="hero__reserved hero__fade" style="--d:900ms">
             <span aria-hidden="true">RESERVED</span>
             <button class="hero__toggle" type="button" aria-label="Videoyu duraklat" data-video-toggle hidden>
@@ -170,10 +186,7 @@
     <!-- ================= 01 THE HOUSE ================= -->
     <section class="section house" id="ev" aria-labelledby="ev-title">
       <div class="wrap">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow eyebrow--ribbon" lang="en">The House</span>
-          <span class="numeral">No. 01</span>
-        </div>
+        <div data-reveal><svg class="mono" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#vmono" width="100" height="100"/></svg></div>
         <div class="house__grid">
           <h2 class="house__statement" id="ev-title" data-reveal>Bir modern ev; <em>viski ve sohbet</em> için.</h2>
           <div class="house__copy" data-reveal style="--d:150ms">
@@ -196,16 +209,17 @@
       <div class="wrap">
         <div class="section-head" data-reveal>
           <span class="eyebrow eyebrow--ribbon"><span><span lang="en">The Collection</span> — Viski</span></span>
-          <span class="numeral">No. 02</span>
+          <svg class="mono mono--sm" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#vmono" width="100" height="100"/></svg>
         </div>
 
         <div class="whisky__grid">
           <figure class="media whisky__portrait" data-reveal="image">
-            <!--pic whisky-sphere|Koyu zeminde, büyük buz küreli kristal kadehte viski|(min-width: 1440px) 710px, (min-width: 1024px) 49vw, calc(100vw - 32px)-->
+            <!--pic vault-pour|Vault'un barmeni, logolu gömleğiyle üç Glencairn kadehe tadım için viski dolduruyor|(min-width: 1440px) 710px, (min-width: 1024px) 49vw, calc(100vw - 32px)-->
           </figure>
           <div class="whisky__text">
             <h2 class="display h2" id="viski-title" lang="en" data-reveal>A matter <em>of taste.</em></h2>
-            <p class="lead" data-reveal style="--d:120ms">Viski, Vault'ta bir içki listesinden fazlası: akşamı yavaşlatan bir ritüel.</p>
+            <p class="lead" data-reveal style="--d:120ms">Farklı coğrafyalardan, farklı üretim geleneklerinden gelen seçkin viskiler.</p>
+            <p class="body" data-reveal style="--d:160ms">Viski Vault'ta bir içki listesinden fazlası: akşamı yavaşlatan bir ritüel.</p>
             <div data-reveal style="--d:200ms">
               <p class="ritual__title">Nasıl isterseniz</p>
               <ol class="ritual">
@@ -219,10 +233,10 @@
 
         <div class="whisky__collage">
           <figure class="media whisky__wide" data-reveal="image">
-            <!--pic backbar|Kemerli, ışıklı arka bar ve raflarda sıralanmış şişeler|(min-width: 1440px) 985px, (min-width: 1024px) 68vw, calc(100vw - 32px)-->
+            <!--pic vault-bar|Vault'un mermer barında Glencairn kadehte viski ve açılış davetiyesi; arkada aydınlatılmış şişeler|(min-width: 1440px) 985px, (min-width: 1024px) 68vw, calc(100vw - 32px)-->
           </figure>
           <figure class="media whisky__inset" data-reveal="image" style="--d:200ms">
-            <!--pic toast|Viski kadehleriyle kadeh tokuşturan eller|(min-width: 1440px) 425px, (min-width: 1024px) 30vw, calc((100vw - 32px) * 0.52)-->
+            <!--pic vault-taste|Kristal avizenin altında, Vault'un mermer barında viski tadan bir misafir|(min-width: 1440px) 425px, (min-width: 1024px) 30vw, calc((100vw - 32px) * 0.52)-->
           </figure>
           <div class="whisky__note" data-reveal>
             <p>Güncel seçki ve fiyatlar menüde. Menünün son hâli Instagram'daki “Menü” öne çıkanında.</p>
@@ -238,7 +252,7 @@
       <div class="wrap">
         <div class="section-head" data-reveal>
           <span class="eyebrow eyebrow--ribbon"><span><span lang="en">The Cigar Room</span> — Puro</span></span>
-          <span class="numeral">No. 03</span>
+          <svg class="mono mono--sm" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#vmono" width="100" height="100"/></svg>
         </div>
         <div class="cigar__grid">
           <div class="cigar__text">
@@ -270,7 +284,7 @@
       <div class="wrap">
         <div class="section-head" data-reveal>
           <span class="eyebrow eyebrow--ribbon"><span><span lang="en">Kitchen &amp; Bar</span> — Mutfak</span></span>
-          <span class="numeral">No. 04</span>
+          <svg class="mono mono--sm" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#vmono" width="100" height="100"/></svg>
         </div>
         <div class="kitchen__intro">
           <h2 class="display h2" id="mutfak-title" lang="en" data-reveal>From the kitchen, <em>to the glass.</em></h2>
@@ -322,10 +336,6 @@
     <!-- ================= 05 ATMOSPHERE ================= -->
     <section class="section atmos" id="atmosfer" aria-labelledby="atmosfer-title">
       <div class="wrap">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow eyebrow--ribbon"><span><span lang="en">The Atmosphere</span> — Atmosfer</span></span>
-          <span class="numeral">No. 05</span>
-        </div>
         <div class="atmos__head">
           <h2 class="display h2" id="atmosfer-title" lang="en" data-reveal>The Vault, <em>after dark.</em></h2>
           <p class="body" data-reveal style="--d:120ms">Işık, kristal, deri ve ahşap. Bir akşamın nasıl hissettirdiğini en iyi, sessiz kareler anlatır.</p>
@@ -333,12 +343,12 @@
 
         <div class="gallery">
           <figure class="g1"><div class="media" data-reveal="image"><!--pic chandelier-red|Kırmızı kadife perdelerin önünde yanan kristal avizeler|(min-width: 1440px) 760px, (min-width: 1024px) 53vw, calc(100vw - 32px)--></div><figcaption class="caption"><span class="numeral">i.</span>Kristal</figcaption></figure>
-          <figure class="g2"><div class="media" data-reveal="image"><!--pic chandelier|Karanlık bir tavanda yanan kristal avize|(min-width: 1440px) 425px, (min-width: 1024px) 30vw, 45vw--></div><figcaption class="caption"><span class="numeral">ii.</span>Işık</figcaption></figure>
+          <figure class="g2"><div class="media" data-reveal="image"><!--pic vault-backbar|Vault'un arka barı: raflarda şişeler, barmen ve misafir, üstte kristal avize|(min-width: 1440px) 425px, (min-width: 1024px) 30vw, 45vw--></div><figcaption class="caption"><span class="numeral">ii.</span>Bar</figcaption></figure>
           <figure class="g3"><div class="media" data-reveal="image"><!--pic lounge-fire|Deri koltuklar, şömine ve tuğla duvarlı bir lounge|(min-width: 1440px) 425px, (min-width: 1024px) 30vw, 45vw--></div><figcaption class="caption"><span class="numeral">iii.</span>Lounge</figcaption></figure>
-          <figure class="g4"><div class="media" data-reveal="image"><!--pic bar-counter|Sarkıt lambaların aydınlattığı uzun ahşap bar tezgâhı|(min-width: 1440px) 650px, (min-width: 1024px) 45vw, calc(100vw - 32px)--></div><figcaption class="caption"><span class="numeral">iv.</span>Bar</figcaption></figure>
+          <figure class="g4"><div class="media" data-reveal="image"><!--pic bar-counter|Sarkıt lambaların aydınlattığı uzun ahşap bar tezgâhı|(min-width: 1440px) 650px, (min-width: 1024px) 45vw, calc(100vw - 32px)--></div><figcaption class="caption"><span class="numeral">iv.</span>Işık</figcaption></figure>
           <figure class="g5"><div class="media" data-reveal="image"><!--pic lamps|Loş masa lambalarıyla aydınlanan masalar|(min-width: 1440px) 535px, (min-width: 1024px) 37vw, 60vw--></div><figcaption class="caption"><span class="numeral">v.</span>Sofra</figcaption></figure>
-          <figure class="g6"><div class="media" data-reveal="image"><!--pic sushi-roll|Yemek çubuklarıyla tutulan bir sushi rulosu|(min-width: 1440px) 200px, (min-width: 1024px) 14vw, 30vw--></div><figcaption class="caption"><span class="numeral">vi.</span>Mutfak</figcaption></figure>
-          <figure class="g7"><div class="media" data-reveal="image"><!--pic cocktail-amber|Ahşap tepside, koyu zeminde amber renkli kokteyl|(min-width: 1440px) 425px, (min-width: 1024px) 30vw, calc(100vw - 32px)--></div><figcaption class="caption"><span class="numeral">vii.</span>Kadeh</figcaption></figure>
+          <figure class="g6"><div class="media" data-reveal="image"><!--pic vault-glass|Glencairn kadehe dökülen viski, yakın çekim|(min-width: 1440px) 200px, (min-width: 1024px) 14vw, 30vw--></div><figcaption class="caption"><span class="numeral">vi.</span>Kadeh</figcaption></figure>
+          <figure class="g7"><div class="media" data-reveal="image"><!--pic vault-flight|Mermer bar üzerinde servis edilen viski tadım seti|(min-width: 1440px) 425px, (min-width: 1024px) 30vw, calc(100vw - 32px)--></div><figcaption class="caption"><span class="numeral">vii.</span>Tadım</figcaption></figure>
         </div>
       </div>
     </section>
@@ -346,6 +356,7 @@
     <!-- Manifesto -->
     <section class="manifesto" aria-label="Vault Reserved">
       <div class="wrap">
+        <div data-reveal><svg class="mono" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#vmono" width="100" height="100"/></svg></div>
         <p class="manifesto__en" lang="en" data-reveal>Not just a place to visit. <em>An evening worth reserving.</em></p>
         <p class="manifesto__tr" data-reveal style="--d:150ms">Uğranacak bir yer değil — ayırtılmaya değer bir akşam.</p>
       </div>
@@ -359,7 +370,7 @@
       <div class="wrap">
         <div class="reserve__frame">
           <div class="reserve__main">
-            <span class="eyebrow" data-reveal>No. 06 — Rezervasyon</span>
+            <span class="eyebrow eyebrow--ribbon" data-reveal>Rezervasyon</span>
             <h2 class="display reserve__title" id="rezervasyon-title" lang="en" data-reveal>Enter <em>the Vault.</em></h2>
             <p class="lead reserve__lead" data-reveal style="--d:120ms">Tarihinizi, saatinizi ve kişi sayınızı seçin; talebiniz doğrudan Vault ekibine ulaşsın.</p>
           </div>
@@ -386,7 +397,7 @@
       <div class="wrap">
         <div class="section-head" data-reveal>
           <span class="eyebrow eyebrow--ribbon"><span><span lang="en">Visit</span> — Ziyaret</span></span>
-          <span class="numeral">No. 07</span>
+          <svg class="mono mono--sm" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#vmono" width="100" height="100"/></svg>
         </div>
         <div class="visit__grid">
           <h2 class="display h2" id="ziyaret-title" lang="en" data-reveal>Find <em>the door.</em></h2>
@@ -420,12 +431,12 @@
 
   <footer class="footer">
     <div class="wrap">
-      <div class="footer__mark" aria-hidden="true"></div>
+      <div class="footer__mark" aria-hidden="true"><svg viewBox="0 0 879 149" focusable="false"><use href="#wm" width="879" height="149"/></svg></div>
       <div class="footer__bar">
         <p>© <span data-year>2026</span> Vault Reserved</p>
         <ul>
           <li>18 yaşından küçüklere alkollü içki satılmaz.</li>
-          <li>Görseller temsilidir.</li>
+          <li>Bazı görseller temsilidir.</li>
         </ul>
       </div>
     </div>
@@ -453,7 +464,7 @@
     </div>
     <div class="rsv__body">
       <aside class="rsv__aside">
-        <!--pic chandelier|_|(min-width: 1440px) 580px, 40vw|lazy-->
+        <!--pic vault-guest|_|(min-width: 1440px) 580px, 40vw|lazy-->
         <h2 class="display" id="rsv-title" lang="en">Reserve <em>your evening.</em></h2>
         <ol class="steps">
           <li><span class="numeral">01</span><strong>Talep</strong><span>Kişi sayısı, tarih ve saati seçin.</span></li>
