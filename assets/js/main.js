@@ -19,9 +19,16 @@
 
   /* ---------- Nav: solid after hero top, active section ---------- */
   const nav = $('#nav');
-  const onScroll = () => { nav.classList.toggle('is-solid', window.scrollY > 24); };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if ('IntersectionObserver' in window) {
+    // A 24px sentinel at the top of the document: no scroll listener, no layout reads (no forced reflow).
+    const sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:24px;pointer-events:none;';
+    document.body.prepend(sentinel);
+    new IntersectionObserver(([entry]) => { nav.classList.toggle('is-solid', !entry.isIntersecting); }).observe(sentinel);
+  } else {
+    nav.classList.add('is-solid');
+  }
 
   const navLinks = $$('.nav__links a');
   const linkFor = new Map(navLinks.map((a) => [a.getAttribute('href').slice(1), a]));
