@@ -60,11 +60,22 @@ Bunlara açık kaynakta ulaşılamadı; uydurulmadı. Site, güncel menü için 
    CSS küçültülüp sayfaya gömülür (ayrı CSS isteği ilk çizimi geciktirmesin diye). Pillow gerekir.
 3. Commit + push → Vercel otomatik yayınlar.
 
-## Ölçüm (Lighthouse 13, 17 Kasım 2026)
+## Ölçüm (Lighthouse 13, 17 Kasım 2026, canlı Vercel sürümü)
 
-Mobil ve masaüstü: Performans 100 · Erişilebilirlik 100 · En İyi Uygulamalar 100 · SEO 100 hedeflenir;
-son ölçüm sonuçları commit mesajlarında. Paylaşım linkiyle ölçülen "yönlendirme" uyarısı linkin
-çerez yönlendirmesinden gelir, gerçek alan adında oluşmaz.
+| | Mobil | Masaüstü |
+| --- | --- | --- |
+| Performans | 97–100 (3 ölçüm) | 100 |
+| Erişilebilirlik | 100 | 100 |
+| En İyi Uygulamalar | 100 | 100 |
+| SEO | 100 | 100 |
+
+Mobil LCP 1,5–1,6 sn · masaüstü LCP 0,4 sn · CLS 0.
+
+- Site Vercel korumasındayken PageSpeed'e düz link verilirse **Vercel'in giriş sayfası** ölçülür (~50 puan); bu sitenin skoru değildir.
+- Paylaşım linkiyle ölçülürse linkin çerez yönlendirmesi mobilde ~1 puan düşürür; gerçek alan adında oluşmaz.
+- "Resim yayınlama" uyarısı görselleri CSS piksel boyutuna göre değerlendirir. Telefon ekranlarında (2–3x) netlik için
+  bilerek daha yüksek çözünürlük sunuluyor; uyarıya uyulursa fotoğraflar bulanık görünür.
+- `llms.txt`: yapay zekâ asistanları için doğrulanmış mekân bilgileri (adres, telefon, rezervasyon linki).
 
 ## Yerelde çalıştırma
 
